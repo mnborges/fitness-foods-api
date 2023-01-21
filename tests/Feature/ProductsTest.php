@@ -68,4 +68,47 @@ class ProductsTest extends TestCase
             ->assertJson(["meta" => ['current_page' => 3]])
             ->assertJsonCount(2, 'data');
     }
+
+    public function test_get_product_endpoint_is_accessible_if_code_is_valid()
+    {
+        $product = Product::factory()->create();
+        $response = $this->get("/products/" . strval($product->code));
+        $response->assertStatus(200);
+    }
+    public function test_get_product_endpoint_returns_404_if_product_not_found()
+    {
+        $response = $this->get("/products/" . strval(fake()->randomNumber(9, true)));
+        $response->assertStatus(404);
+    }
+
+    public function test_get_product_endpoint_response_has_correct_structure()
+    {
+        $product = Product::factory()->create();
+        $response = $this->get("/products/" . strval($product->code));
+        $response->assertJsonStructure([
+            "code",
+            "status",
+            "imported_t",
+            "url",
+            "creator",
+            "created_t",
+            "last_modified_t",
+            "product_name",
+            "quantity",
+            "brands",
+            "categories",
+            "labels",
+            "cities",
+            "purchase_places",
+            "stores",
+            "ingredients_text",
+            "traces",
+            "serving_size",
+            "serving_quantity",
+            "nutriscore_score",
+            "nutriscore_grade",
+            "main_category",
+            "image_url",
+        ]);
+    }
 }

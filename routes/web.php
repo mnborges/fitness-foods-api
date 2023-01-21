@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::apiResource('/products', ProductController::class)->only(['index']);
+Route::apiResource('/products', ProductController::class)->only(['index', 'show']);
