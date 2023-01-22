@@ -11,4 +11,8 @@ class Product extends Model
     protected $primaryKey = 'code';
     public $incrementing = false;
     public $timestamps = false;
+    protected $casts = [
+        'imported_t' => 'datetime:Y-m-d',
+    ];
+    protected $guarded = [];
 }
