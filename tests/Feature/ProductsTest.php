@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Testing\Fluent\AssertableJson;
 use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -206,5 +205,17 @@ class ProductsTest extends TestCase
             $response = $this->putJson("/products/" . strval($product_original->code), [$key => $value]);
             $response->assertUnprocessable();
         }
+    }
+    public function test_delete_product_with_invalid_product_code_returns_not_found()
+    {
+        $response = $this->delete("/products/" . strval(fake()->randomNumber(9, true)));
+        $response->assertNotFound();
+    }
+    public function test_delete_product_with_valid_product_code_is_successfull()
+    {
+        $product = Product::factory()->create(["status" => "published"]);
+        $response = $this->delete("/products/" . strval($product->code));
+        $response->assertNoContent();
+        $this->assertSame(Product::find($product->code)->status, "trash");
     }
 }

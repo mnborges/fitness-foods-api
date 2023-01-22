@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::apiResource('/products', ProductController::class)->only(['index', 'show', 'update']);
+Route::apiResource('/products', ProductController::class)->except(["store"]);
