@@ -14,5 +14,5 @@ class Product extends Model
     protected $casts = [
         'imported_t' => 'datetime:Y-m-d',
     ];
-    protected $guarded = [];
+    protected $guarded = ['imported_t'];
 }

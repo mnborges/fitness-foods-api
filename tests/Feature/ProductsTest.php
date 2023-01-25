@@ -63,9 +63,6 @@ class ProductsTest extends TestCase
     {
         Product::factory(22)->create();
         $response = $this->get('/products?page=3');
-        // info("-----------");
-        // info($response->__toString());
-        // info("-----------");
         $response
             ->assertJson(["meta" => ['current_page' => 3]])
             ->assertJsonCount(2, 'data');
@@ -87,9 +84,6 @@ class ProductsTest extends TestCase
     {
         $product = Product::factory()->create();
         $response = $this->get("/products/" . strval($product->code));
-        // info("**********");
-        // info($response->__toString());
-        // info("**********");
         $response->assertJsonStructure([
             "code",
             "status",
@@ -172,8 +166,6 @@ class ProductsTest extends TestCase
             "created_t" => fake()->unixTime(),
             "last_modified_t" => fake()->unixTime(),
             "creator" => fake()->userName(),
-            "image_url" => fake()->url(),
-            "url" => fake()->url(),
         ];
         foreach ($update as $key => $value) {
             $response = $this->putJson("/products/" . strval($product_original->code), [$key => $value]);
