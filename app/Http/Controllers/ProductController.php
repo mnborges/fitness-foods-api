@@ -6,7 +6,6 @@ use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends Controller
 {
@@ -42,9 +41,9 @@ class ProductController extends Controller
             "ingredients_text" => "string",
             "traces" => "string",
             "serving_size" => "string",
-            "serving_quantity" => "integer",
-            "nutriscore_score" => "numeric",
-            "nutriscore_grade" => "alpha|size:1",
+            "serving_quantity" => "numeric",
+            "nutriscore_score" => "integer",
+            "nutriscore_grade" => "alpha|size:1|in:a,b,c,d,e",
             "main_category" => "string"
         ])->validate();
 

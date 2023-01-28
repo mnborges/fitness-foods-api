@@ -161,7 +161,7 @@ class ProductsTest extends TestCase
     {
         $product_original = Product::factory()->create();
         $update = [
-            "code" => fake()->unique()->randomNumber(9, true),
+            "code" => strval(fake()->unique()->randomNumber(9, true)),
             "imported_t" => now(),
             "created_t" => fake()->unixTime(),
             "last_modified_t" => fake()->unixTime(),
@@ -189,8 +189,8 @@ class ProductsTest extends TestCase
         $product_original = Product::factory()->create();
         $update = [
             "nutriscore_grade" => "more_than_one_letter",
-            "serving_quantity" => "not_float",
-            "nutriscore_score" => "not_integer",
+            "serving_quantity" => "not_numeric",
+            "nutriscore_score" => 10.5, // not integer
             "status" => "invalid"
         ];
         foreach ($update as $key => $value) {

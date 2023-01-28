@@ -13,7 +13,7 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'code' => fake()->unique()->randomNumber(9, true),
+            'code' => strval(fake()->unique()->randomNumber(9, true)),
             'status' => fake()->randomElement(["draft", "trash", "published"]),
             'imported_t' => now(),
             'url' => fake()->url(),

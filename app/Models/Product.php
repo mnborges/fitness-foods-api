@@ -12,7 +12,7 @@ class Product extends Model
     public $incrementing = false;
     public $timestamps = false;
     protected $casts = [
-        'imported_t' => 'datetime:Y-m-d',
+        'imported_t' => 'datetime:Y-m-d\\TH:i:s\Z',
     ];
     protected $guarded = ['imported_t'];
 }
