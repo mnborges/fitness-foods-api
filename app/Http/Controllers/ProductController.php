@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return ProductResource::collection(Product::paginate(10));
+        return ProductResource::collection(Product::paginate(10))
+        ->response()
+        ->setEncodingOptions(JSON_UNESCAPED_SLASHES);
     }
 
     public function show($code)

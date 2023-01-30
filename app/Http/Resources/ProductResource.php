@@ -16,4 +16,8 @@ class ProductResource extends JsonResource
     {
        return parent::toArray($request);
     }
+    public function withResponse($request, $response)
+    {
+        $response->header('Content-Type', 'application/json')->setEncodingOptions(JSON_UNESCAPED_SLASHES);
+    }
 }
