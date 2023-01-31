@@ -10,6 +10,24 @@
 
 Desenvolvido para solução do desafio PHP Challenge 20200916 da [Coodesh](https://coodesh.com/), que estabelece que o objetivo da API é auxiliar nutricionistas da empresa Fitness Foods LC através do acesso aos dados do projeto [Open Food Facts](https://br.openfoodfacts.org/), além de outras regras e orientações.
 
+### Sobre a API
+
+A informação detalhada sobre a API está presente no aquivo [openapi.json](openapi.json).
+Segue abaixo um pequeno resumo das endpoints:
+
+-   `/`
+    -   **GET** : Retorna detalhes sobre o estado atual da API
+-   `/products`
+    -   **GET** : Retorna lista paginada dos produtos disponíveis na base de dados
+-   `/products/{code}`
+    -   **GET** : Retorna informações de um produto especificado por seu código
+    -   **PUT** : Atualiza informações do produto especificado por seu código
+    -   **DELETE** : Atualiza o status do produto colocando-o na lixeira.
+
+### Importação de Dados
+
+Os dados são importados diariamente à meia noite, para configurar um horário diferente basta mudar a variável de ambiente `CRON_SCHEDULE_HOUR` em seu arquivo `.env` para o horário desejado seguindo o formato **HH:MM**.
+
 ## Stack
 
   <ul>
@@ -21,7 +39,7 @@ Desenvolvido para solução do desafio PHP Challenge 20200916 da [Coodesh](https
 
 ## Pré-requisitos
 
-Apenas [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Git](https://git-scm.com/downloads) e seus próprios requisitos são necessários para execução dessa aplicação.
+Apenas [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Git](https://git-scm.com/downloads) e seus próprios requisitos são necessários para execução desta aplicação.
 
 ## Execução passo a passo
 
