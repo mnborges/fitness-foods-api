@@ -24,9 +24,6 @@ Segue abaixo um pequeno resumo das endpoints:
     -   **PUT** : Atualiza informações do produto especificado por seu código
     -   **DELETE** : Atualiza o status do produto colocando-o na lixeira.
 
-### Importação de Dados
-
-Os dados são importados diariamente à meia noite, para configurar um horário diferente basta mudar a variável de ambiente `CRON_SCHEDULE_HOUR` em seu arquivo `.env` para o horário desejado seguindo o formato **HH:MM**.
 
 ## Stack
 
@@ -96,13 +93,29 @@ Apenas [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Git](
     ./vendor/bin/sail php artisan test
     ```
 
-8. Verifique a aplicação em funcionamento no endereço [localhost](https://localhost).
+8. Verifique a aplicação em funcionamento no endereço [localhost](http://localhost).
 
     Para interromper a execução do docker container pressione Control+C na sessão de terminal do passo 4, ou utilize o comando seguinte em outra sessão
 
     ```bash
      ./vendor/bin/sail down
     ```
+
+## Importação de Dados
+
+Os dados do projeto [Open Food Facts](https://br.openfoodfacts.org/) devem ser importados diariamente à meia noite, para configurar um horário diferente basta mudar a variável de ambiente `CRON_SCHEDULE_HOUR` em seu arquivo `.env` para o horário desejado seguindo o formato **HH:MM**.
+
+Para executar a importação manualmente execute o seguinte comando:
+
+```bash
+    ./vendor/bin/sail php artisan import:cron
+```
+
+Para automatizá-la é necessário configurar o servidor para executar o comando `scheduler:run` do Laravel a cada minuto, conforme indicado pela [documentação](https://laravel.com/docs/9.x/scheduling#running-the-scheduler). 
+
+```bash
+* * * * * cd /path-to-the-project && php artisan schedule:run >> /dev/null 2>&1
+```
 
 ## Contato
 

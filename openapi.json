@@ -152,8 +152,7 @@
                         "type": "string"
                     },
                     "last_data_import": {
-                        "type": "string",
-                        "format": "date-time"
+                        "type": "string"
                     },
                     "db_uptime": {
                         "type": "string"
