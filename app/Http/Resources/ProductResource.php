@@ -14,7 +14,9 @@ class ProductResource extends JsonResource
      */
     public function toArray($request)
     {
-       return parent::toArray($request);
+        $res = parent::toArray($request);
+        $res['serving_quantity'] = floatval($res['serving_quantity']);
+        return $res;
     }
     public function withResponse($request, $response)
     {
