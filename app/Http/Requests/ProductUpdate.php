@@ -14,24 +14,24 @@ class ProductUpdate extends FormRequest
             "created_t" => ["prohibited"],
             "last_modified_t" => ["prohibited"],
             "creator" => ["prohibited"],
-            "image_url" => ["url"],
-            "url" => ["url"],
-            "status" => ["string","in:draft,published"],
-            "product_name" => ["string"],
-            "quantity" =>[ "string"],
-            "brands" => ["string"],
-            "categories" => ["string"],
-            "labels" => ["string"],
-            "cities" => ["string"],
-            "purchase_places" => ["string"],
-            "stores" => ["string"],
-            "ingredients_text" => ["string"],
-            "traces" => ["string"],
-            "serving_size" => ["string"],
-            "serving_quantity" => ["numeric"],
-            "nutriscore_score" => ["integer"],
-            "nutriscore_grade" => ["alpha","size:1","in:a,b,c,d,e"],
-            "main_category" => ["string"]
+            "image_url" => ["url", "filled"],
+            "url" => ["url","filled"],
+            "status" => ["string","in:draft,published", "filled"],
+            "product_name" => ["string", "filled"],
+            "quantity" =>[ "string", "filled"],
+            "brands" => ["string", "filled"],
+            "categories" => ["string", "filled"],
+            "labels" => ["string", "filled"],
+            "cities" => ["string", "filled"],
+            "purchase_places" => ["string", "filled"],
+            "stores" => ["string", "filled"],
+            "ingredients_text" => ["string", "filled"],
+            "traces" => ["string", "filled"],
+            "serving_size" => ["string", "filled"],
+            "serving_quantity" => ["numeric", "filled"],
+            "nutriscore_score" => ["integer", "filled"],
+            "nutriscore_grade" => ["alpha","size:1","in:a,b,c,d,e", "filled"],
+            "main_category" => ["string", "filled"]
         ];
     }
     public function bodyParameters()
@@ -57,6 +57,9 @@ class ProductUpdate extends FormRequest
                 'description' => 'Quantity and unit',
                 'example' => '114 g (3 x 2 u.)',
             ],
+            "nutriscore_grade" => [
+                'example' => 'a',
+            ]
         ];
     }
 }
