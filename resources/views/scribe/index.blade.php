@@ -256,7 +256,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/products?page=14" \
+    --get "http://localhost/products?page=20" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -267,7 +267,7 @@ fetch(url, {
 );
 
 const params = {
-    "page": "14",
+    "page": "20",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -446,10 +446,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="page"                data-endpoint="GETproducts"
-               value="14"
+               value="20"
                data-component="query">
     <br>
-<p>Page number Example: <code>14</code></p>
+<p>Page number Example: <code>20</code></p>
             </div>
                 </form>
 
@@ -627,19 +627,19 @@ fetch(url, {
     \"status\": \"draft\",
     \"product_name\": \"Vitória crackers\",
     \"quantity\": \"114 g (3 x 2 u.)\",
-    \"brands\": \"cum\",
-    \"categories\": \"quibusdam\",
-    \"labels\": \"soluta\",
-    \"cities\": \"error\",
-    \"purchase_places\": \"vitae\",
-    \"stores\": \"rerum\",
-    \"ingredients_text\": \"consectetur\",
-    \"traces\": \"inventore\",
-    \"serving_size\": \"voluptas\",
-    \"serving_quantity\": 103925.947607334,
-    \"nutriscore_score\": 4,
-    \"nutriscore_grade\": \"c\",
-    \"main_category\": \"eum\"
+    \"brands\": \"sed\",
+    \"categories\": \"molestias\",
+    \"labels\": \"est\",
+    \"cities\": \"natus\",
+    \"purchase_places\": \"veniam\",
+    \"stores\": \"quam\",
+    \"ingredients_text\": \"occaecati\",
+    \"traces\": \"culpa\",
+    \"serving_size\": \"voluptatum\",
+    \"serving_quantity\": 1168,
+    \"nutriscore_score\": 16,
+    \"nutriscore_grade\": \"t\",
+    \"main_category\": \"nihil\"
 }"
 </code></pre></div>
 
@@ -660,19 +660,19 @@ let body = {
     "status": "draft",
     "product_name": "Vitória crackers",
     "quantity": "114 g (3 x 2 u.)",
-    "brands": "cum",
-    "categories": "quibusdam",
-    "labels": "soluta",
-    "cities": "error",
-    "purchase_places": "vitae",
-    "stores": "rerum",
-    "ingredients_text": "consectetur",
-    "traces": "inventore",
-    "serving_size": "voluptas",
-    "serving_quantity": 103925.947607334,
-    "nutriscore_score": 4,
-    "nutriscore_grade": "c",
-    "main_category": "eum"
+    "brands": "sed",
+    "categories": "molestias",
+    "labels": "est",
+    "cities": "natus",
+    "purchase_places": "veniam",
+    "stores": "quam",
+    "ingredients_text": "occaecati",
+    "traces": "culpa",
+    "serving_size": "voluptatum",
+    "serving_quantity": 1168,
+    "nutriscore_score": 16,
+    "nutriscore_grade": "t",
+    "main_category": "nihil"
 };
 
 fetch(url, {
@@ -864,10 +864,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="brands"                data-endpoint="PUTproducts--code-"
-               value="cum"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>cum</code></p>
+<p>Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>categories</code></b>&nbsp;&nbsp;
@@ -875,10 +875,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="categories"                data-endpoint="PUTproducts--code-"
-               value="quibusdam"
+               value="molestias"
                data-component="body">
     <br>
-<p>Example: <code>quibusdam</code></p>
+<p>Example: <code>molestias</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>labels</code></b>&nbsp;&nbsp;
@@ -886,10 +886,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="labels"                data-endpoint="PUTproducts--code-"
-               value="soluta"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>soluta</code></p>
+<p>Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cities</code></b>&nbsp;&nbsp;
@@ -897,10 +897,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="cities"                data-endpoint="PUTproducts--code-"
-               value="error"
+               value="natus"
                data-component="body">
     <br>
-<p>Example: <code>error</code></p>
+<p>Example: <code>natus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>purchase_places</code></b>&nbsp;&nbsp;
@@ -908,10 +908,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="purchase_places"                data-endpoint="PUTproducts--code-"
-               value="vitae"
+               value="veniam"
                data-component="body">
     <br>
-<p>Example: <code>vitae</code></p>
+<p>Example: <code>veniam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>stores</code></b>&nbsp;&nbsp;
@@ -919,10 +919,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="stores"                data-endpoint="PUTproducts--code-"
-               value="rerum"
+               value="quam"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>quam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ingredients_text</code></b>&nbsp;&nbsp;
@@ -930,10 +930,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="ingredients_text"                data-endpoint="PUTproducts--code-"
-               value="consectetur"
+               value="occaecati"
                data-component="body">
     <br>
-<p>Example: <code>consectetur</code></p>
+<p>Example: <code>occaecati</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>traces</code></b>&nbsp;&nbsp;
@@ -941,10 +941,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="traces"                data-endpoint="PUTproducts--code-"
-               value="inventore"
+               value="culpa"
                data-component="body">
     <br>
-<p>Example: <code>inventore</code></p>
+<p>Example: <code>culpa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>serving_size</code></b>&nbsp;&nbsp;
@@ -952,10 +952,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="serving_size"                data-endpoint="PUTproducts--code-"
-               value="voluptas"
+               value="voluptatum"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>voluptatum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>serving_quantity</code></b>&nbsp;&nbsp;
@@ -963,10 +963,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="serving_quantity"                data-endpoint="PUTproducts--code-"
-               value="103925.94760733"
+               value="1168"
                data-component="body">
     <br>
-<p>Example: <code>103925.94760733</code></p>
+<p>Example: <code>1168</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nutriscore_score</code></b>&nbsp;&nbsp;
@@ -974,10 +974,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="nutriscore_score"                data-endpoint="PUTproducts--code-"
-               value="4"
+               value="16"
                data-component="body">
     <br>
-<p>Example: <code>4</code></p>
+<p>Example: <code>16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nutriscore_grade</code></b>&nbsp;&nbsp;
@@ -985,10 +985,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="nutriscore_grade"                data-endpoint="PUTproducts--code-"
-               value="c"
+               value="t"
                data-component="body">
     <br>
-<p>Must contain only letters. Must be one of <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, or <code>e</code> Must be 1 character. Example: <code>c</code></p>
+<p>Must contain only letters. Must be one of <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, or <code>e</code> Must be 1 character. Example: <code>t</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>main_category</code></b>&nbsp;&nbsp;
@@ -996,10 +996,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="main_category"                data-endpoint="PUTproducts--code-"
-               value="eum"
+               value="nihil"
                data-component="body">
     <br>
-<p>Example: <code>eum</code></p>
+<p>Example: <code>nihil</code></p>
         </div>
         </form>
 

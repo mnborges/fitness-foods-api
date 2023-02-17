@@ -9,11 +9,11 @@ class ProductUpdate extends FormRequest
     public function rules()
     {
         return [
-            // "code" => ["prohibited"],
-            // "imported_t" => ["prohibited"],
-            // "created_t" => ["prohibited"],
-            // "last_modified_t" => ["prohibited"],
-            // "creator" => ["prohibited"],
+            "code" => ["prohibited"],
+            "imported_t" => ["prohibited"],
+            "created_t" => ["prohibited"],
+            "last_modified_t" => ["prohibited"],
+            "creator" => ["prohibited"],
             "image_url" => ["url"],
             "url" => ["url"],
             "status" => ["string","in:draft,published"],

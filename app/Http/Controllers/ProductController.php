@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductUpdate;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
-use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {

@@ -13,6 +13,7 @@ class Product extends Model
     public $timestamps = false;
     protected $casts = [
         'imported_t' => 'datetime:Y-m-d\\TH:i:s\Z',
+        'serving_quantity' => 'float',
     ];
     protected $guarded = ['imported_t'];
 }
