@@ -49,7 +49,13 @@ class APIDetails extends Controller
         }
         return "unperformed";
     }
-    public function __invoke(Request $request)
+    /**
+     * API Details
+     *
+     * Returns details about the current state of the API
+     * @responseFile Response/Index/Detail.json
+     **/
+    public function __invoke()
     {
         $db_ok = True;
         try{

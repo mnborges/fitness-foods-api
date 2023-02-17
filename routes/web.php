@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\APIDetails;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +12,3 @@ use App\Http\Controllers\APIDetails;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', APIDetails::class);
-
-Route::apiResource('/products', ProductController::class)->except(["store"]);
